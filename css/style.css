@@ -16,6 +16,7 @@
     background-color: pink;
     height: 100%;
     border: 1px solid black;
+    padding: 5px;
 }
 
 /*FRAMEWORK*/
@@ -42,6 +43,7 @@
 
 [class*="col-"]{
     float: left;
+    position: relative;
 }
 
 /*Columns*/
@@ -138,4 +140,21 @@
 
 .col-offset-11{
     width: calc( (100% / 12) * 11);
+}
+
+/*Span interno colonne con debug*/
+.debug [class*="col-"] span{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.debug .container [class*="col-"]{
+    height: 100%;
+}
+
+.debug .container [class*="col-"] .container>[class*="col-"]{
+    background-color: palevioletred;
+    
 }
