@@ -8,7 +8,6 @@
 /*DEBUG*/
 
 .debug .container{
-    background-color: coral;
     height: 200px;
 }
 
@@ -18,6 +17,28 @@
     border: 1px solid black;
     padding: 5px;
 }
+
+/*Span interno colonne con debug*/
+.debug [class*="col-"] span{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.debug .container [class*="col-"]{
+    height: 100%;
+}
+
+.debug .container [class*="col-"] .container {
+    height: 100%;
+}
+
+.debug .container [class*="col-"] .container>[class*="col-"]{
+    background-color: palevioletred;
+    border: 1px solid white;
+}
+
 
 /*FRAMEWORK*/
 
@@ -142,19 +163,4 @@
     width: calc( (100% / 12) * 11);
 }
 
-/*Span interno colonne con debug*/
-.debug [class*="col-"] span{
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
-.debug .container [class*="col-"]{
-    height: 100%;
-}
-
-.debug .container [class*="col-"] .container>[class*="col-"]{
-    background-color: palevioletred;
-    
-}
